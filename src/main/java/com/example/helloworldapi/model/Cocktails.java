@@ -3,7 +3,6 @@ package com.example.helloworldapi.model;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -22,6 +21,8 @@ public class Cocktails {
     private String name;
     @Column(length = 250)
     private String description;
+    @Transient
+    private double price;
     @ManyToMany
     private List<Drinks> drinks;
 }
