@@ -6,6 +6,7 @@ import com.example.helloworldapi.repository.CategoryRepository;
 import com.example.helloworldapi.repository.DrinksRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +17,20 @@ public class DrinksService {
     private DrinksRepository drinksRepository;
     private CategoryRepository categoryRepository;
 
-    public List<Drinks> findAllDrinks(int page, int size) {
+    public List<Drinks> findAllDrinks(int page, int size, String sort) {
+        if (sort != null) {
+            if (sort.equals("asc")) {
+                return drinksRepository.findAll(
+                                PageRequest.of(page, size, Sort.by("price").ascending())
+                        )
+                        .toList();
+            } else {
+                return drinksRepository.findAll(
+                                PageRequest.of(page, size, Sort.by("price").descending())
+                        )
+                        .toList();
+            }
+        }
         return drinksRepository.findAll(PageRequest.of(page, size)).toList();
     }
 

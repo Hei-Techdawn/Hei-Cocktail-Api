@@ -17,9 +17,10 @@ public class DrinksController {
     @GetMapping(value = "")
     public List<Drinks> getAll(
             @RequestParam("page") int page,
-            @RequestParam("size") int size
+            @RequestParam("size") int size,
+            @RequestParam(name = "sort", required = false) String sort
     ) {
-        return drinksService.findAllDrinks(page, size);
+        return drinksService.findAllDrinks(page, size,sort);
     }
 
     @PostMapping(value = "")
