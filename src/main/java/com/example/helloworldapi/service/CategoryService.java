@@ -3,7 +3,6 @@ package com.example.helloworldapi.service;
 import com.example.helloworldapi.model.Category;
 import com.example.helloworldapi.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
-import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

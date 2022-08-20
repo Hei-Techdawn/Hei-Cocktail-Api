@@ -1,6 +1,5 @@
 package com.example.helloworldapi.service;
 
-import com.example.helloworldapi.model.Category;
 import com.example.helloworldapi.model.Drinks;
 import com.example.helloworldapi.repository.CategoryRepository;
 import com.example.helloworldapi.repository.DrinksRepository;
