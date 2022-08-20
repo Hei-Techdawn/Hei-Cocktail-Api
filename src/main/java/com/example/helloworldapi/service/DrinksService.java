@@ -8,6 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @AllArgsConstructor
@@ -33,6 +34,7 @@ public class DrinksService {
         return drinksRepository.findAll(PageRequest.of(page, size)).toList();
     }
 
+    @Transactional
     public List<Drinks> createDrinks(List<Drinks> drinksList) {
         return drinksRepository.saveAll(drinksList);
     }
