@@ -3,14 +3,12 @@ package com.example.helloworldapi.controller;
 import com.example.helloworldapi.model.MyUser;
 import com.example.helloworldapi.service.MyUserService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping(value = "/users")
+@CrossOrigin(origins = "*",allowCredentials = "*")
 public class MyUserController {
     private MyUserService myUserService;
 
