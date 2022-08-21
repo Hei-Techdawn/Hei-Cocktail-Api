@@ -43,7 +43,7 @@ public class MyUserService {
             oldMyUser.setUsername(myUser.getUsername());
         }
         if (myUser.getPassword() != null) {
-            oldMyUser.setPassword(myUser.getPassword());
+            oldMyUser.setPassword(passwordEncoder().encode(myUser.getPassword()));
         }
         return myUserRepository.save(oldMyUser);
     }
