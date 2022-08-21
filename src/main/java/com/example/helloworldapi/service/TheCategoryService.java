@@ -10,7 +10,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Service
-public class CategoryService {
+public class TheCategoryService {
     private CategoryRepository categoryRepository;
 
     public List<Category> findAllCategory() {

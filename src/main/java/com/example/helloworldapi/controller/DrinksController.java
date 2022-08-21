@@ -1,7 +1,8 @@
 package com.example.helloworldapi.controller;
 
-import com.example.helloworldapi.model.Drinks;
-import com.example.helloworldapi.service.DrinksService;
+import com.example.helloworldapi.model.Drink;
+import com.example.helloworldapi.service.DataFormat;
+import com.example.helloworldapi.service.DrinkService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,49 +11,48 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/drinks")
 @AllArgsConstructor
-@CrossOrigin(origins = "*")
+@CrossOrigin
 public class DrinksController {
 
-    private DrinksService drinksService;
+    private DrinkService drinkService;
 
     @GetMapping(value = "")
-    public List<Drinks> getAll(
+    public DataFormat<Drink> getAll(
             @RequestParam("page") int page,
-            @RequestParam("size") int size,
-            @RequestParam(name = "sort", required = false) String sort
+            @RequestParam("size") int size
     ) {
-        return drinksService.findAllDrinks(page, size,sort);
+        return drinkService.findAllDrinks(page - 1, size);
     }
 
     @PostMapping(value = "")
-    public List<Drinks> postDrinks(
-            @RequestBody List<Drinks> drinksList
+    public List<Drink> postDrinks(
+            @RequestBody List<Drink> drinkList
     ) {
-        return drinksService.createDrinks(drinksList);
+        return drinkService.createDrinks(drinkList);
     }
 
     @GetMapping(value = "/{id}")
-    public Drinks getDrinksByCategory(@PathVariable int id) {
-        return drinksService.findDrinks(id);
+    public Drink getDrinksByCategory(@PathVariable int id) {
+        return drinkService.findDrinks(id);
     }
 
     @PutMapping(value = "/{id}")
-    public Drinks putDrinks(
+    public Drink putDrinks(
             @PathVariable int id,
-            @RequestBody Drinks drinks
+            @RequestBody Drink drink
     ) {
-        return drinksService.updateDrinks(id, drinks);
+        return drinkService.updateDrinks(id, drink);
     }
 
     @DeleteMapping(value = "/{id}")
     public void deleteDrinks(
             @PathVariable int id
     ) {
-        drinksService.removeDrinks(id);
+        drinkService.removeDrinks(id);
     }
 
     @GetMapping(value = "/category/{idCategory}")
-    public List<Drinks> getByIdCategory(@PathVariable int idCategory) {
-        return drinksService.findDrinksByIdCategory(idCategory);
+    public List<Drink> getByIdCategory(@PathVariable int idCategory) {
+        return drinkService.findDrinksByIdCategory(idCategory);
     }
 }

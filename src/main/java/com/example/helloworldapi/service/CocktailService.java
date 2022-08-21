@@ -1,8 +1,8 @@
 package com.example.helloworldapi.service;
 
 import com.example.helloworldapi.model.Cocktail;
-import com.example.helloworldapi.model.Drinks;
-import com.example.helloworldapi.repository.CocktailsRepository;
+import com.example.helloworldapi.model.Drink;
+import com.example.helloworldapi.repository.CocktailRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -13,39 +13,39 @@ import java.util.List;
 @AllArgsConstructor
 @Service
 public class CocktailService {
-    private CocktailsRepository cocktailsRepository;
+    private CocktailRepository cocktailRepository;
 
     public List<Cocktail> getAllCocktails(int page, int size) {
-        List<Cocktail> cocktailsList = cocktailsRepository.findAll(PageRequest.of(page, size)).toList();
+        List<Cocktail> cocktailsList = cocktailRepository.findAll(PageRequest.of(page, size)).toList();
         for (Cocktail cocktails : cocktailsList) {
             cocktails.setPrice(sumPriceDrinks(cocktails.getDrinks()));
         }
         return cocktailsList;
     }
 
-    public double sumPriceDrinks(List<Drinks> drinksList) {
+    public double sumPriceDrinks(List<Drink> drinkList) {
         double sum = 0;
-        for (Drinks drinks : drinksList) {
-            sum += drinks.getPrice();
+        for (Drink drink : drinkList) {
+            sum += drink.getPrice();
         }
         return sum;
     }
 
     @Transactional
     public List<Cocktail> createCocktails(List<Cocktail> cocktailsList) {
-        return cocktailsRepository.saveAll(cocktailsList);
+        return cocktailRepository.saveAll(cocktailsList);
     }
 
     public Cocktail findCocktail(int id) {
-        return cocktailsRepository.findById(id).get();
+        return cocktailRepository.findById(id).get();
     }
 
     public void deleteCocktailById(int id) {
-        cocktailsRepository.deleteById(id);
+        cocktailRepository.deleteById(id);
     }
 
     public Cocktail updateCocktail(int id, Cocktail cocktail) {
-        Cocktail oldCocktail = cocktailsRepository.findById(id).get();
+        Cocktail oldCocktail = cocktailRepository.findById(id).get();
         if (cocktail.getName() != null) {
             oldCocktail.setName(cocktail.getName());
         }
@@ -55,6 +55,6 @@ public class CocktailService {
         if (cocktail.getDrinks() != null) {
             oldCocktail.setDrinks(cocktail.getDrinks());
         }
-        return cocktailsRepository.save(oldCocktail);
+        return cocktailRepository.save(oldCocktail);
     }
 }

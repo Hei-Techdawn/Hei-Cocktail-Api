@@ -1,10 +1,18 @@
 package com.example.helloworldapi.controller;
 
 import com.example.helloworldapi.model.Category;
-import com.example.helloworldapi.service.CategoryService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.example.helloworldapi.service.TheCategoryService;
 import java.util.List;
 
 @AllArgsConstructor
@@ -12,7 +20,7 @@ import java.util.List;
 @RequestMapping(value = "/category")
 @CrossOrigin(origins = "*")
 public class CategoryController {
-    private CategoryService categoryService;
+    private TheCategoryService categoryService;
 
     @GetMapping(value = "")
     public List<Category> getAllCategory() {

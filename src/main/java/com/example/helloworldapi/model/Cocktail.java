@@ -25,5 +25,5 @@ public class Cocktail  implements Serializable {
     @Transient
     private double price;
     @ManyToMany
-    private List<Drinks> drinks;
+    private List<Drink> drinks;
 }
