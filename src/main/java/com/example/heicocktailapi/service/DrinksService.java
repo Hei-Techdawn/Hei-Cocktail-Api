@@ -1,8 +1,8 @@
-package com.example.helloworldapi.service;
+package com.example.heicocktailapi.service;
 
-import com.example.helloworldapi.model.Drinks;
-import com.example.helloworldapi.repository.CategoryRepository;
-import com.example.helloworldapi.repository.DrinksRepository;
+import com.example.heicocktailapi.model.Drinks;
+import com.example.heicocktailapi.repository.CategoryRepository;
+import com.example.heicocktailapi.repository.DrinksRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;

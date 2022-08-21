@@ -1,7 +1,7 @@
-package com.example.helloworldapi.controller;
+package com.example.heicocktailapi.controller;
 
-import com.example.helloworldapi.model.Category;
-import com.example.helloworldapi.service.CategoryService;
+import com.example.heicocktailapi.model.Category;
+import com.example.heicocktailapi.service.CategoryService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

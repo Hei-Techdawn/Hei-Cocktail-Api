@@ -1,4 +1,4 @@
-package com.example.helloworldapi.controller;
+package com.example.heicocktailapi.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

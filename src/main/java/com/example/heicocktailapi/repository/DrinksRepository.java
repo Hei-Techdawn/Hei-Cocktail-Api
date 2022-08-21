@@ -1,7 +1,7 @@
-package com.example.helloworldapi.repository;
+package com.example.heicocktailapi.repository;
 
-import com.example.helloworldapi.model.Category;
-import com.example.helloworldapi.model.Drinks;
+import com.example.heicocktailapi.model.Category;
+import com.example.heicocktailapi.model.Drinks;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

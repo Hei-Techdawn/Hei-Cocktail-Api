@@ -1,4 +1,4 @@
-package com.example.helloworldapi.model;
+package com.example.heicocktailapi.model;
 
 import lombok.*;
 

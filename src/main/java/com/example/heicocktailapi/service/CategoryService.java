@@ -1,7 +1,7 @@
-package com.example.helloworldapi.service;
+package com.example.heicocktailapi.service;
 
-import com.example.helloworldapi.model.Category;
-import com.example.helloworldapi.repository.CategoryRepository;
+import com.example.heicocktailapi.model.Category;
+import com.example.heicocktailapi.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

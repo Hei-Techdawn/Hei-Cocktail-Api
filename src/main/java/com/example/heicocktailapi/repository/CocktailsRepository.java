@@ -1,6 +1,6 @@
-package com.example.helloworldapi.repository;
+package com.example.heicocktailapi.repository;
 
-import com.example.helloworldapi.model.Cocktail;
+import com.example.heicocktailapi.model.Cocktail;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,5 @@
-package com.example.helloworldapi.model;
+package com.example.heicocktailapi.model;
 
-import com.example.helloworldapi.model.MyUser;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

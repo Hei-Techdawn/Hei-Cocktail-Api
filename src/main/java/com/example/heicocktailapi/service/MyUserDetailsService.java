@@ -1,8 +1,8 @@
-package com.example.helloworldapi.service;
+package com.example.heicocktailapi.service;
 
-import com.example.helloworldapi.model.MyUserDetails;
-import com.example.helloworldapi.model.MyUser;
-import com.example.helloworldapi.repository.MyUserRepository;
+import com.example.heicocktailapi.model.MyUserDetails;
+import com.example.heicocktailapi.model.MyUser;
+import com.example.heicocktailapi.repository.MyUserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
