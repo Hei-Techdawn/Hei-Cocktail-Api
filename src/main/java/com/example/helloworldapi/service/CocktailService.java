@@ -37,7 +37,9 @@ public class CocktailService {
     }
 
     public Cocktail findCocktail(int id) {
-        return cocktailsRepository.findById(id).get();
+        Cocktail cocktail = cocktailsRepository.findById(id).get();
+        cocktail.setPrice(sumPriceDrinks(cocktail.getDrinks()));
+        return cocktail;
     }
 
     public void deleteCocktailById(int id) {
