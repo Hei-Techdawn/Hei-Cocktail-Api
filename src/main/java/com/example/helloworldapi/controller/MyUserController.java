@@ -5,6 +5,8 @@ import com.example.helloworldapi.service.MyUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @AllArgsConstructor
 @RequestMapping(value = "/users")
@@ -17,5 +19,25 @@ public class MyUserController {
             @RequestBody MyUser myUser
     ) {
         return myUserService.createUser(myUser);
+    }
+
+    @GetMapping(value = "")
+    public List<MyUser> getUsers() {
+        return myUserService.getAllUsers();
+    }
+
+    @GetMapping(value = "/{id}")
+    public MyUser getUser(@PathVariable int id) {
+        return myUserService.getUserById(id);
+    }
+
+    @PutMapping(value = "/{id}")
+    public MyUser putUser(@PathVariable int id, @RequestBody MyUser myUser) {
+        return myUserService.updateUserById(id, myUser);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public void delete(@PathVariable int id) {
+        myUserService.deleteUser(id);
     }
 }
