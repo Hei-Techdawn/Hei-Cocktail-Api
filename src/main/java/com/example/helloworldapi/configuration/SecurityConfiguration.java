@@ -39,6 +39,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/category").hasAuthority("admin")
                 .anyRequest().hasAuthority("admin")
                 .and()
+                .formLogin()
+                .and()
+                .logout().permitAll()
+                .and()
+                .cors()
+                .and()
                 .csrf().disable()
                 .httpBasic();
     }
