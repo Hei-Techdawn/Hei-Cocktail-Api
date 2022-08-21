@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/drinks")
 @AllArgsConstructor
-@CrossOrigin(origins = "*",allowCredentials = "*")
+@CrossOrigin(origins = "*")
 public class DrinksController {
 
     private DrinksService drinksService;

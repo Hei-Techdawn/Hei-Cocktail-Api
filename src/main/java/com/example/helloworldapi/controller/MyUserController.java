@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 @RequestMapping(value = "/users")
-@CrossOrigin(origins = "*",allowCredentials = "*")
+@CrossOrigin(origins = "*")
 public class MyUserController {
     private MyUserService myUserService;
 
