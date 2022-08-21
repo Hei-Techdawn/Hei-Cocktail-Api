@@ -3,6 +3,7 @@ package com.example.helloworldapi.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Getter
@@ -13,7 +14,7 @@ import java.util.List;
 @EqualsAndHashCode
 @Entity
 @Table(name = "coktails")
-public class Cocktail {
+public class Cocktail  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

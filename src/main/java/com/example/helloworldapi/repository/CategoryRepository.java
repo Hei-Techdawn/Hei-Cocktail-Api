@@ -1,5 +1,6 @@
 package com.example.helloworldapi.repository;
 
+
 import com.example.helloworldapi.model.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 
